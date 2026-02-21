@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
   <diagram name="Página-1" id="ftk70mb6o2D7DcIi07Ne">
-    <mxGraphModel dx="1434" dy="836" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1195" dy="697" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -41,13 +41,8 @@
         <mxCell id="b19JP0UV_SCl5ZO-RYiv-11" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.java" parent="b19JP0UV_SCl5ZO-RYiv-12" vertex="1">
           <mxGeometry x="93.53999999999996" y="10" width="52.92" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="b19JP0UV_SCl5ZO-RYiv-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.998;entryY=0.682;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="b19JP0UV_SCl5ZO-RYiv-13" target="b19JP0UV_SCl5ZO-RYiv-9" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="970" y="410.5757575757576" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="b19JP0UV_SCl5ZO-RYiv-13" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_PostgreSQL.png;" parent="1" vertex="1">
-          <mxGeometry x="1350" y="305.4" width="135.73" height="140" as="geometry" />
+          <mxGeometry x="1432" y="407" width="135.73" height="140" as="geometry" />
         </mxCell>
         <mxCell id="b19JP0UV_SCl5ZO-RYiv-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#a20025;strokeColor=#6F0000;" parent="1" source="b19JP0UV_SCl5ZO-RYiv-20" target="b19JP0UV_SCl5ZO-RYiv-9" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -123,9 +118,28 @@
             <mxPoint x="3" y="49" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="b19JP0UV_SCl5ZO-RYiv-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="b19JP0UV_SCl5ZO-RYiv-9" target="b19JP0UV_SCl5ZO-RYiv-13" edge="1">
+        <mxCell id="b19JP0UV_SCl5ZO-RYiv-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;startArrow=classic;startFill=0;" parent="1" source="b19JP0UV_SCl5ZO-RYiv-9" target="b19JP0UV_SCl5ZO-RYiv-13" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1330" y="345.1212121212121" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1191" y="405" />
+              <mxPoint x="1191" y="442" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gknil7T3PPXItsXy0LJ1-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://files.svgcdn.io/logos/meilisearch.png;" vertex="1" parent="1">
+          <mxGeometry x="1406" y="90" width="113" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="gknil7T3PPXItsXy0LJ1-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;startArrow=blockThin;startFill=1;" edge="1" parent="1" source="b19JP0UV_SCl5ZO-RYiv-9" target="gknil7T3PPXItsXy0LJ1-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1463" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gknil7T3PPXItsXy0LJ1-6" value="PESQUISA DE ANOTAÇÕES" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gknil7T3PPXItsXy0LJ1-5">
+          <mxGeometry x="-0.2982" y="2" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>

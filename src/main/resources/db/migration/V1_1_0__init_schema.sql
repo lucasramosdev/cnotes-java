@@ -14,7 +14,7 @@ CREATE TABLE folders (
 
 CREATE TABLE notes (
     id SERIAL PRIMARY KEY,
-    folder_id INTEGER NOT NULL,
+    folder_id INTEGER,
     title TEXT NOT NULL,
     summary TEXT,
     created_at TIMESTAMP NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE notes (
 );
 
 CREATE TABLE notes_tags (
-    note_id INTERGER NOT NULL,
+    note_id INTEGER NOT NULL,
     value VARCHAR(25) NOT NULL,
     PRIMARY KEY (note_id, value),
     CONSTRAINT fk_notes_notes_tags

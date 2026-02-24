@@ -1,14 +1,13 @@
 package com.lucasramos.cnotes.domain.folder;
 
 import com.lucasramos.cnotes.domain.note.Note;
-import com.lucasramos.cnotes.domain.topic.Topic;
+import com.lucasramos.cnotes.infra.baseentity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,30 +15,25 @@ import java.util.List;
 @Table(name = "folders")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Folder {
+@Builder
+@Data
+public class Folder extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column(name = "parent_id")
     private Long parent;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "parent")
+    @Builder.Default
     private List<Folder> children = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "folder")
+    @Builder.Default
     private List<Note> notes = new ArrayList<>();
-
-    @CreatedDate
-    @Column(nullable = false, name = "created_at")
-    private OffsetDateTime createdAt;
-
-    @LastModifiedDate
-    @Column(nullable = false, name = "updated_at")
-    private OffsetDateTime updatedAt;
-
 }

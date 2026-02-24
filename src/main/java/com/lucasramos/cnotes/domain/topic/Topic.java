@@ -1,21 +1,22 @@
 package com.lucasramos.cnotes.domain.topic;
 
+import com.lucasramos.cnotes.infra.baseentity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-
-import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "topics")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Topic {
+@Data
+public class Topic extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -24,15 +25,6 @@ public class Topic {
     @Column(nullable = false)
     private String details;
 
-    @Column(nullable = false)
+    @Column(name = "note_id", nullable = false)
     private Long note;
-
-    @CreatedDate
-    @Column(nullable = false, name = "created_at")
-    private OffsetDateTime createdAt;
-
-    @LastModifiedDate
-    @Column(nullable = false, name = "updated_at")
-    private OffsetDateTime updatedAt;
-
 }

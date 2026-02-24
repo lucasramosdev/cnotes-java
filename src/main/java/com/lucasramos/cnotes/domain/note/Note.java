@@ -1,27 +1,29 @@
 package com.lucasramos.cnotes.domain.note;
 
 import com.lucasramos.cnotes.domain.topic.Topic;
+import com.lucasramos.cnotes.infra.baseentity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "notes")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Note {
+@Data
+public class Note extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "folder_id")
     private Long folder;
 
     @Column(nullable = false)
@@ -33,16 +35,10 @@ public class Note {
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "notes_tags", joinColumns = @JoinColumn(name = "note_id"))
     @Column(name = "value", nullable = false)
+    @Builder.Default
     private List<String> tags = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "note")
+    @Builder.Default
     private List<Topic> topics = new ArrayList<>();
-
-    @CreatedDate
-    @Column(nullable = false, name = "created_at")
-    private OffsetDateTime createdAt;
-
-    @LastModifiedDate
-    @Column(nullable = false, name = "updated_at")
-    private OffsetDateTime updatedAt;
 }

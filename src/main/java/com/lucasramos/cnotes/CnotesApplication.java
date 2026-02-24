@@ -9,5 +9,4 @@ public class CnotesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CnotesApplication.class, args);
 	}
-
 }

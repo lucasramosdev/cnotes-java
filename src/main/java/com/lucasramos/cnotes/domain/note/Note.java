@@ -34,7 +34,7 @@ public class Note extends BaseEntity {
 
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "notes_tags", joinColumns = @JoinColumn(name = "note_id"))
-    @Column(name = "value", nullable = false)
+    @Column(name = "tag_value", nullable = false)
     @Builder.Default
     private List<String> tags = new ArrayList<>();
 

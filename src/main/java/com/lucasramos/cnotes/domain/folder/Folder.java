@@ -29,11 +29,11 @@ public class Folder extends BaseEntity {
     @Column(name = "parent_id")
     private Long parent;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "parent")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "parent")
     @Builder.Default
     private List<Folder> children = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "folder")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "folder")
     @Builder.Default
     private List<Note> notes = new ArrayList<>();
 }

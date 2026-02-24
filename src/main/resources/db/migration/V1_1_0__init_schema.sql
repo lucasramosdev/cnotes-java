@@ -27,8 +27,8 @@ CREATE TABLE notes (
 
 CREATE TABLE notes_tags (
     note_id INTEGER NOT NULL,
-    value VARCHAR(25) NOT NULL,
-    PRIMARY KEY (note_id, value),
+    tag_value VARCHAR(25) NOT NULL,
+    PRIMARY KEY (note_id, tag_value),
     CONSTRAINT fk_notes_notes_tags
         FOREIGN KEY (note_id)
         REFERENCES notes(id)

@@ -6,4 +6,5 @@ public interface FolderService {
 
     List<Folder> getTopFiveFolders();
 
+    Folder getFolder(Long id);
 }

@@ -18,5 +18,4 @@ import org.springframework.test.context.web.WebAppConfiguration;
         classes = CnotesApplication.class)
 @WebAppConfiguration
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public abstract class CNotesIntegrationTest {
-}
+public abstract class CNotesIntegrationTest { }

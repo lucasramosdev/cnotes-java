@@ -12,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class FolderServiceImplTest extends CNotesIntegrationTest {
 
@@ -29,11 +31,14 @@ public class FolderServiceImplTest extends CNotesIntegrationTest {
     @Autowired
     private FolderService folderService;
 
-    private void saveFolderWithNotes(String name, int numOfNotes) {
+    private Folder saveFolderWithNotes(String name, int numOfNotes) {
         Folder folder = folderRepository.save(mockFactory.buildFolder(name));
+        List<Note> notes = new ArrayList<>();
         for (int i = 0; i < numOfNotes; i++) {
-            noteRepository.save(mockFactory.buildNote(folder.getId(), String.valueOf(i)));
+            notes.add(noteRepository.save(mockFactory.buildNote(folder.getId(), String.valueOf(i))));
         }
+        folder.setNotes(notes);
+        return folder;
     }
 
     @Nested
@@ -71,5 +76,49 @@ public class FolderServiceImplTest extends CNotesIntegrationTest {
             }
 
         }
+    }
+
+    @Nested
+    class Give_a_folder extends CNotesIntegrationTest {
+        private Folder folder;
+
+        @Nested
+        class When_get_folder extends CNotesIntegrationTest {
+
+            private Folder folderResponse;
+
+            @BeforeEach
+            void setUp() {
+                folder = saveFolderWithNotes("Folder to get", 1);
+                folderResponse = folderService.getFolder(folder.getId());
+            }
+
+            @Test
+            void Then_should_return_the_folder() {
+                assertEquals(folder.getId(), folderResponse.getId());
+                assertEquals(folder.getName(), folderResponse.getName());
+                assertEquals(folder.getParent(), folderResponse.getParent());
+                assertEquals(folder.getChildren().size(), folderResponse.getChildren().size());
+                assertEquals(folder.getNotes().getFirst().getTitle(), folderResponse.getNotes().getFirst().getTitle());
+            }
+
+        }
+
+        @Nested
+        class When_get_folder_not_exists extends CNotesIntegrationTest {
+
+            private Long id = 1L;
+
+            @BeforeEach
+            void setUp() {
+                folderRepository.deleteAll();
+            }
+
+            @Test
+            void Then_should_throws_not_such_element_exception() {
+                assertThrows(NoSuchElementException.class, () -> folderService.getFolder(id));
+            }
+        }
+
     }
 }

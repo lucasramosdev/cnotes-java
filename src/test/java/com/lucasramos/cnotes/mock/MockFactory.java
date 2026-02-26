@@ -4,6 +4,8 @@ import com.lucasramos.cnotes.domain.folder.Folder;
 import com.lucasramos.cnotes.domain.note.Note;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class MockFactory {
 
@@ -11,8 +13,16 @@ public class MockFactory {
         return Folder.builder().name(name).build();
     }
 
-    public Note buildNote(Long folderId, String name) {
+    public Note buildNoteForFolder(Long folderId, String name) {
         String title = String.format("Note %s for Folder %d", name, folderId);
         return Note.builder().title(title).folder(folderId).build();
+    }
+
+    public Note buildNote(String title) {
+        return Note.builder().title(title).build();
+    }
+
+    public Note buildNote(String title, List<String> tags) {
+        return Note.builder().title(title).tags(tags).build();
     }
 }

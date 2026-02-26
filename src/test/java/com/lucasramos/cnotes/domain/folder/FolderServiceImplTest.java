@@ -79,7 +79,7 @@ public class FolderServiceImplTest extends CNotesIntegrationTest {
     }
 
     @Nested
-    class Give_a_folder extends CNotesIntegrationTest {
+    class Given_a_folder extends CNotesIntegrationTest {
         private Folder folder;
 
         @Nested

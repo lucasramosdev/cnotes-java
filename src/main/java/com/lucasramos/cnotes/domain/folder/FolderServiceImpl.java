@@ -19,7 +19,9 @@ public class FolderServiceImpl implements FolderService {
 
     @Override
     public Folder getFolder(Long id) {
-        return folderRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Folder with id " + id + " not found"));
+        return folderRepository.findById(id).orElseThrow(
+                () -> new NoSuchElementException("Folder with id " + id + " not found")
+        );
     }
 
 }

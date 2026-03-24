@@ -1,11 +1,13 @@
 package com.lucasramos.jakenotes.domain.topic;
 
+import com.lucasramos.jakenotes.domain.note.Note;
 import com.lucasramos.jakenotes.infra.baseentity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.minidev.json.annotate.JsonIgnore;
 
 @Entity
 @Table(name = "topics")
@@ -25,6 +27,8 @@ public class Topic extends BaseEntity {
     @Column(nullable = false)
     private String details;
 
-    @Column(name = "note_id", nullable = false)
-    private Long note;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "note_id", nullable = false)
+    private Note note;
 }

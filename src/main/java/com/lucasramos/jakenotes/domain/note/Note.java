@@ -1,5 +1,6 @@
 package com.lucasramos.jakenotes.domain.note;
 
+import com.lucasramos.jakenotes.domain.folder.Folder;
 import com.lucasramos.jakenotes.domain.topic.Topic;
 import com.lucasramos.jakenotes.infra.baseentity.BaseEntity;
 import jakarta.persistence.*;
@@ -7,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.minidev.json.annotate.JsonIgnore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +25,10 @@ public class Note extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "folder_id")
-    private Long folder;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "folder_id")
+    private Folder folder;
 
     @Column(nullable = false)
     private String title;

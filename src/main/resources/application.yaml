@@ -5,3 +5,10 @@ spring:
     url: "jdbc:postgresql://localhost:5432/jakenotes"
     username: ${DB_USER}
     password: ${DB_PASSWORD}
+  thymeleaf:
+    cache: false
+  web:
+    resources:
+      static:
+        locations[0]: file:src/main/resources/static/
+        locations[1]: classpath:/static/

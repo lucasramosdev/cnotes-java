@@ -1,11 +1,17 @@
-<th:block th:fragment="cover(id, title, folderName)">
-    <a th:href="@{/notes/{id}(id=${id})}" class="m-3">
-        <div>
-            <div class="cover">
-                <h3 th:text="${title}" class="text-truncate fs-5"></h3>
+<th:block th:fragment="cover(note)">
+    <a th:href="@{/notes/{id}(id=${note.id})}" class="m-3">
+        <div class="cover overflow-hidden">
+            <span th:text="${note.createdAt}" class="note-date"></span>
+            <h4 th:text="${note.title}" class="text-truncate fs-6"></h4>
+            <p th:text="${note.summary}" class="summary"></p>
+            <div class="d-flex flex-row justify-content-start">
+                <th:block th:each="tag : ${note.tags}">
+                    <span th:text="${tag}" class="tag"></span>
+                </th:block>
             </div>
-            <div class="folder-name">
-                <p th:if="${folderName != null}" th:text="${folderName}"></p>
+            <div class="folder-name" th:if="${note.folderName != null}">
+                <i class="bi bi-folder-fill"></i>
+                <p class="text-truncate" th:text="'/'+${note.folderName}"></p>
             </div>
         </div>
     </a>

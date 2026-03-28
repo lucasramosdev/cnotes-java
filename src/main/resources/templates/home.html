@@ -1,12 +1,25 @@
 <main>
-    <h2 class="section-title">Notas Recentes</h2>
-
     <section>
+        <h3 class="section-title">Notas Recentes</h3>
+
         <div class="container-fluid d-flex justify-content-center justify-content-lg-start row row-cols-auto">
             <th:block th:each="note : ${notes}">
-                <div th:replace="~{fragments/note-cover :: cover(id=${note.id}, title=${note.title}, folderName=${note.folderName})}">
+                <div th:replace="~{fragments/note-cover :: cover(note=${note})}">
                 </div>
             </th:block>
         </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Principais pastas</h2>
+
+
+
+<!--        <div class="container-fluid d-flex justify-content-center justify-content-lg-start row row-cols-auto">
+            <th:block th:each="note : ${notes}">
+                <div th:replace="~{fragments/folder-icon :: folder(id=1, name='Test')}">
+                </div>
+            </th:block>
+        </div>-->
     </section>
 </main>

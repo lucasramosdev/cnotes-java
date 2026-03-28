@@ -1,9 +1,21 @@
+:root {
+    --primary-color: #D97723;
+    --secondary-color: #B4531B;
+    --tertiary-color: #DC3826;
+    --neutral-color: #F6DDAC;
+    --label-color: #4C463B;
+    --text-color: #4C463B;
+    --bg-color: #FFF8F2;
+}
+
+
 body {
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
     padding: 0;
     margin: 0;
-    background-color: #F6DDAC;
+    background-color: var(--bg-color);
+    color: #000;
 /*    background: repeating-linear-gradient(
         to bottom,
         #F6DDAC 0,
@@ -17,6 +29,10 @@ body {
 
 main {
     padding: 1em 2em;
+}
+
+section {
+    margin: 3em 0;
 }
 
 input:focus {

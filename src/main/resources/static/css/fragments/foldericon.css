@@ -1,0 +1,50 @@
+.folder-icon {
+    height: 110px;
+    width:  110px;
+    position: relative;
+}
+
+.folder-icon-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F1A129;
+    border-radius: 30px;
+}
+
+.folder-icon-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F9CF2C;
+    border-radius: 30px;
+}
+
+.folder-icon-front::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    background-color: #F1A129;
+    border-radius: 30px;
+    transform: translate(85%, 60%);
+}
+
+.folder-icon-front::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color: red;
+    border-radius: 30px;
+    transform: translate(85%, 60%);
+}
+
+@media only screen and (min-width: 992px) {
+    .older-icon {
+        height: 200px;
+        width:  200px;
+    }
+}

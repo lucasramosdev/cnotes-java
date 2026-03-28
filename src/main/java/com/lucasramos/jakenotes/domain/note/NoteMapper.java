@@ -14,6 +14,9 @@ public class NoteMapper {
         NoteCoverDto noteCover = NoteCoverDto.builder()
                 .id(entity.getId())
                 .title(entity.getTitle())
+                .summary(entity.getSummary())
+                .createdAt(entity.getCreatedAtForNoteCover())
+                .tags(entity.getTags())
                 .build();
 
         if(nonNull(entity.getFolder())) {

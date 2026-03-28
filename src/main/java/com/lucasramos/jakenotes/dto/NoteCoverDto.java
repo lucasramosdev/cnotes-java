@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Builder
 @Data
 @NoArgsConstructor
@@ -12,6 +14,9 @@ import lombok.NoArgsConstructor;
 public class NoteCoverDto {
 
     private Long id;
-    private String folderName;
     private String title;
+    private String summary;
+    private String createdAt;
+    private List<String> tags;
+    private String folderName;
 }

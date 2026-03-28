@@ -18,13 +18,10 @@ function toggleMobileSearchInput() {
 function onSubmitSearch(event) {
     event.preventDefault();
     const query = event.target.children[0].value;
-    window.location.replace("/search?q="+query)
+    window.location.assign("/search?q="+query)
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const mobileSearchIcon = document.getElementById("mobile-search-icon");
-    mobileSearchIcon.addEventListener("click", toggleMobileSearchInput);
-
     const forms = document.getElementsByClassName('search-form');
     for (let form of forms) {
         form.addEventListener('submit', onSubmitSearch)

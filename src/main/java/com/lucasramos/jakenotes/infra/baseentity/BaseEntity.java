@@ -11,7 +11,7 @@ public class BaseEntity {
 
     @CreationTimestamp
     @Column(nullable = false, name = "created_at", updatable = false)
-    private OffsetDateTime createdAt;
+    protected OffsetDateTime createdAt;
 
     @UpdateTimestamp
     @Column(nullable = false, name = "updated_at")

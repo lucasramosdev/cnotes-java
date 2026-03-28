@@ -1,6 +1,6 @@
 package com.lucasramos.jakenotes.domain.note;
 
-import com.lucasramos.jakenotes.dto.NoteCoverDto;
+import com.lucasramos.jakenotes.dto.covers.NoteCoverDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

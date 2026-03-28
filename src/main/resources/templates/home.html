@@ -11,15 +11,12 @@
     </section>
 
     <section>
-        <h2 class="section-title">Principais pastas</h2>
-
-
-
-<!--        <div class="container-fluid d-flex justify-content-center justify-content-lg-start row row-cols-auto">
-            <th:block th:each="note : ${notes}">
-                <div th:replace="~{fragments/folder-icon :: folder(id=1, name='Test')}">
+        <h3 class="section-title">Principais pastas</h3>
+        <div class="container-fluid d-flex justify-content-center justify-content-lg-start row row-cols-auto">
+            <th:block th:each="folder : ${folders}">
+                <div th:replace="~{fragments/folder-cover :: folder(folder=${folder})}">
                 </div>
             </th:block>
-        </div>-->
+        </div>
     </section>
 </main>

@@ -40,18 +40,3 @@
     border-style: none;
     background-color: transparent;
 }
-
-.search-input-mobile-on {
-    top: 1%;
-    z-index: 50;
-    background-color: #FFFFFF;
-    display: block;
-}
-
-.hide-on-header {
-    visibility: hidden
-}
-
-.hide-on-header > * {
-    visibility: hidden
-}

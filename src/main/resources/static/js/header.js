@@ -1,20 +1,3 @@
-function toggleMobileSearchInput() {
-    const input = document.getElementById("mobile-search-input");
-    const logo = document.getElementById("logo");
-    let classes = input.className;
-
-    if (classes.includes("search-input-mobile-on")) {
-        input.className = "d-none"
-        logo.className = "navbar-brand"
-        return
-    }
-
-    logo.className = "navbar-brand hide-on-header"
-    input.className = "form-control search-notes search-input-mobile-on"
-    return
-}
-
-
 function onSubmitSearch(event) {
     event.preventDefault();
     const query = event.target.children[0].value;

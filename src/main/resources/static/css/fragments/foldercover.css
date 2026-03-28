@@ -1,0 +1,27 @@
+.folder-cover {
+    background: #FFF;
+    height: 150px;
+    width:  250px;
+    border-radius: 10px;
+    padding: 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.folder-cover-icon {
+    color: #8F4E13;
+    font-size: 28px;
+    margin-bottom: .25em;
+}
+
+.folder-cover > h4 {
+    color: var(--headline-color);
+}
+
+.folder-cover > span {
+    color: var(--label-color);
+}

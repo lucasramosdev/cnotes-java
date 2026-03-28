@@ -1,6 +1,6 @@
 <th:block th:fragment="cover(note)">
     <a th:href="@{/notes/{id}(id=${note.id})}" class="m-3">
-        <div class="cover overflow-hidden">
+        <div class="note-cover overflow-hidden">
             <span th:text="${note.createdAt}" class="note-date"></span>
             <h4 th:text="${note.title}" class="text-truncate fs-6"></h4>
             <p th:text="${note.summary}" class="summary"></p>

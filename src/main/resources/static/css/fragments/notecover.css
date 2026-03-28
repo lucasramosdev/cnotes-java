@@ -1,4 +1,4 @@
-.cover {
+.note-cover {
     background: #FFF;
     height: 200px;
     width:  300px;
@@ -13,7 +13,7 @@
     position: relative;
 }
 
-.cover > h4 {
+.note-cover > h4 {
     font-weight: bolder;
     max-width: stretch;
     margin-bottom: 0.25em;

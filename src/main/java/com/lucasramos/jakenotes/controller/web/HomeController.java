@@ -1,5 +1,6 @@
 package com.lucasramos.jakenotes.controller.web;
 
+import com.lucasramos.jakenotes.domain.folder.FolderComponent;
 import com.lucasramos.jakenotes.domain.note.NoteComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +19,15 @@ public class HomeController {
     @Autowired
     private NoteComponent noteComponent;
 
+    @Autowired
+    private FolderComponent folderComponent;
+
     @GetMapping
     public String homePage(Model model) {
         model.addAttribute("styles", List.of("/css/home.css"));
         model.addAttribute("content", "home");
         model.addAttribute("notes", noteComponent.getRecentNotes());
+        model.addAttribute("folders", folderComponent.getTopFiveFolders());
         return "layout";
     }
 

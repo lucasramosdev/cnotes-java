@@ -1,4 +1,4 @@
-package com.lucasramos.jakenotes.dto;
+package com.lucasramos.jakenotes.dto.covers;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

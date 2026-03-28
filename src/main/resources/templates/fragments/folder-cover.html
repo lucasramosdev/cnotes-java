@@ -1,0 +1,10 @@
+<th:block th:fragment="folder(folder)">
+    <a th:href="@{/folders/{id}(id=${folder.id})}" class="m-3">
+        <div class="folder-cover">
+            <i class="bi bi-folder-fill folder-cover-icon"></i>
+            <h4 th:text="${folder.name}" class="fs-5"></h4>
+            <span th:if="${folder.countOfNotes} > 1" th:text="${folder.countOfNotes} + ' notas'" class="fs-6"></span>
+            <span th:if="${folder.countOfNotes} <= 1" th:text="${folder.countOfNotes} + ' nota'" class="fs-6"></span>
+        </div>
+    </a>
+</th:block>

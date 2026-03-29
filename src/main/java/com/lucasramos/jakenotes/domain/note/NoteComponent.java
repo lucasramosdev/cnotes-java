@@ -34,4 +34,9 @@ public class NoteComponent {
         Page<NoteDocument> documents = noteDocumentService.searchNotes(query, pageable);
         return new PageImpl<>(documents.stream().map(noteMapper::toNoteCoverDto).toList(), pageable, documents.getTotalElements());
     }
+
+    public List<NoteCoverDto> getNotesByFolderId(Long id) {
+        List<Note> notes = noteService.getNotesByFolderId(id);
+        return notes.stream().map(noteMapper::toNoteCoverDto).toList();
+    }
 }

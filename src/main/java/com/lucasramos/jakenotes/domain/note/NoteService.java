@@ -10,4 +10,6 @@ public interface NoteService {
 
     List<Note> getRecentNotes();
 
+    List<Note> getNotesByFolderId(Long id);
+
 }

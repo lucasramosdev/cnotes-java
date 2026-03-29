@@ -1,5 +1,6 @@
 package com.lucasramos.jakenotes.domain.note;
 
+import com.lucasramos.jakenotes.domain.folder.Folder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -32,5 +33,10 @@ public class NoteServiceImpl implements NoteService {
     public List<Note> getRecentNotes() {
         PageRequest pageable = PageRequest.of(0, MAX_HOME_SCREEN_NOTES, Sort.by(Sort.Direction.DESC, "createdAt"));
         return noteRepository.findAll(pageable).stream().toList();
+    }
+
+    @Override
+    public List<Note> getNotesByFolderId(Long id) {
+        return noteRepository.findByFolderId(id);
     }
 }

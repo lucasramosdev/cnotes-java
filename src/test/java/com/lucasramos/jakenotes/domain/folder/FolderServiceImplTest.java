@@ -35,7 +35,7 @@ public class FolderServiceImplTest extends JakeNotesIntegrationTest {
         Folder folder = folderRepository.save(mockFactory.buildFolder(name));
         List<Note> notes = new ArrayList<>();
         for (int i = 0; i < numOfNotes; i++) {
-            notes.add(noteRepository.save(mockFactory.buildNoteForFolder(folder.getId(), String.valueOf(i))));
+            notes.add(noteRepository.save(mockFactory.buildNoteForFolder(folder, String.valueOf(i))));
         }
         folder.setNotes(notes);
         return folder;
